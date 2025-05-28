@@ -4,8 +4,8 @@ const Lights = () => {
   return (
     <>
         <directionalLight  castShadow
-          intensity={1}
-          position={[1, 1, 1]}
+          intensity={6}
+          position={[0, 1, 1]}
           shadow-mapSize-width={1024}
           shadow-mapSize-height={1024}
         />
