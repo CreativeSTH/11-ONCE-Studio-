@@ -1,4 +1,4 @@
-import React from 'react'
+import { useRef, useMemo, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { TextureLoader } from "three/src/loaders/TextureLoader"
 import { useLoader } from '@react-three/fiber'
@@ -7,20 +7,19 @@ import { MeshMatcapMaterial } from 'three'
 export function Giratiempo(props) {
   const textureClock = useLoader(
       TextureLoader, 
-      "./textures/matcaps/matcap1.png" 
+      "./textures/matcaps/matcap5.png" 
   )
-   const matcapMaterial = React.useMemo(
+   const matcapMaterial = useMemo(
     () => new MeshMatcapMaterial({ matcap: textureClock, flatShading: true }),
     [textureClock]
   )
 
-  const group = React.useRef()
+  const group = useRef()
   const { nodes, materials, animations } = useGLTF('/models/giratiemp.glb')
   const { actions } = useAnimations(animations, group)
-  console.log(materials)
 
   // ▶️ Play animation
-  React.useEffect(() => {
+  useEffect(() => {
     const firstAction = actions[Object.keys(actions)[0]]
     if (firstAction) {
       firstAction.play()
@@ -28,6 +27,14 @@ export function Giratiempo(props) {
     const secondAction = actions[Object.keys(actions)[1]]
     if (secondAction) {
       secondAction.play()
+    }
+    const thirdAction = actions[Object.keys(actions)[2]]
+    if (thirdAction) {
+      thirdAction.play()
+    }
+    const fourthAction = actions[Object.keys(actions)[3]]
+    if (fourthAction) {
+      fourthAction.play()
     }
   }, [actions])
 
