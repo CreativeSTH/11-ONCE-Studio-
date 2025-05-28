@@ -8,6 +8,7 @@ import Orbit from "./components/Orbit"
 import StarsPresets from "./components/StarsPresets"
 import EnvironmentPresets from "./components/EnvironmentPresets"
 import ClockTexture from "./components/ClockTexture"
+import TextxPrueba from "./components/TextxPrueba"
 import { Giratiempo } from "./components/Giratiemp"
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Suspense fallback={null}>
           <Giratiempo />
           <ClockTexture />
+          <TextxPrueba />
         </Suspense>
         <Orbit/>
         <StarsPresets />

@@ -7,7 +7,7 @@ import { MeshMatcapMaterial } from 'three'
 export function Giratiempo(props) {
   const textureClock = useLoader(
       TextureLoader, 
-      "./textures/matcaps/matcap5.png" 
+      "./textures/matcaps/matcap1.png" 
   )
    const matcapMaterial = useMemo(
     () => new MeshMatcapMaterial({ matcap: textureClock, flatShading: true }),
